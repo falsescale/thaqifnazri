@@ -1,0 +1,157 @@
+/* ========== Reset ========== */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 20px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    background: white;
+    overflow-x: hidden;
+    display: flex;
+  }
+  
+  /* ========== Menu (Left Panel) ========== */
+
+
+  #menu {
+    position: fixed;
+    top: 155px;
+    left: 30px;
+    max-width: 25vw;
+    height: 0;
+    padding: 0;
+    color: white;
+    margin: 0 auto;
+    mix-blend-mode: difference;
+    user-select: none;
+    
+  }
+  
+  .menu-inner {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #menu button {
+    all: unset;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+    text-underline-offset: 2px;
+  }
+  
+  #menu button:hover {
+    text-decoration: underline;
+  }
+  
+  #menu button.active {
+    text-decoration: underline;
+
+  }
+  
+  /* ========== Description (Bottom of Menu) ========== */
+  .description {
+    font-size: 13px;
+    
+  }
+  
+  /* ========== Artwork Display (Right Panel) ========== */
+  
+  .artwork-display {
+    position: fixed;
+    top: 0;
+    right: 25px;
+    bottom: 0;
+    left: 32vw; /* reserves space for the menu on the left */
+    user-select: none;
+    z-index: 15;
+    display: flex;
+    justify-content: flex-end;   /* aligns image to the right */
+    align-items: center;         /* vertically centers image */
+    padding: 25px 0;             /* optional: vertical spacing from top/bottom */
+  }
+  
+  .artwork-display img {
+    max-width: 95%;
+    max-height: 95%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    user-select: none;
+  }
+  
+  .artwork-description {
+    position: fixed;
+    bottom: 10px;
+    left:30px; /* moved right */
+    max-width: 30vw;
+    color: black;
+    line-height: 1.4;
+    z-index: 20;
+    background-color: white;
+    border-radius: 0px;
+    box-sizing: border-box;
+  }
+
+  #artwork-description a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: inherit; /* keeps link color same as surrounding text */
+    transition: text-decoration 0.3s ease;
+  }
+  
+  #artwork-description a:hover {
+    text-decoration: none;
+  }
+  
+  
+  
+  /* ========== Toggles (Top Left & Index) ========== */
+  .top-left,
+  .index {
+    position: fixed;
+    left: 10px;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    z-index: 10;
+    color: white;
+    mix-blend-mode: difference;
+    user-select: none;
+  }
+  
+  #toggle-description {
+    top: 10px;
+    
+  }
+  
+  .index {
+    top: 130px;
+    
+  }
+  
+  .top-left:hover,
+  .index:hover {
+    text-decoration: none;
+  }
+  
+
+
+  @media (max-width: 600px) {
+    .artwork-description {
+      position: static;
+      max-width: 95vw;
+      margin: 10px auto 20px auto;
+      padding: 10px;
+      background: white;
+      color: black;
+      border-radius: 6px;
+      box-sizing: border-box;
+      text-align: center;
+      z-index: 30;
+    }
+  }

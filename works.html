@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Artwork Viewer</title>
+  <link rel="stylesheet" href="works.css">
+</head>
+<body>
+  <a class="top-left" id="toggle-description" href="index.html">back</a>
+  <div class="index" id="toggle-artwork">index</div>
+
+  <!-- Menu -->
+  <div id="menu">
+    <div class="menu-inner">
+      <!-- Buttons (unchanged) -->
+      <button data-target="a-z">An A-Z of Things I Like</button>
+      <button data-target="bloom">Bloom Poster</button>
+      <button data-target="crossing-border">Crossing Border Festival</button>
+      <button data-target="damascus">Damascus Modular Typeface</button>
+      <button data-target="edith">Edith</button>
+      <button data-target="fluidity">Fluidity in Form</button>
+      <button data-target="how-you-are">How You Are Is Not How I Want You</button>
+      <button data-target="i-forgot">I Forgot How I Got Here</button>
+      <button data-target="i-love-you">I Love You as a Friend</button>
+      <button data-target="intermission-party">Intermission Party Programme</button>
+      <button data-target="jan-middendorp">Jan Middendorp Exhibition</button>
+      <button data-target="kabk-rewire">KABK x Rewire</button>
+      <button data-target="meditations">Meditations in an Emergency</button>
+      <button data-target="navigation">Navigation Narratives</button>
+      <button data-target="patterns">Patterns, Patterns, Patterns</button>
+      <button data-target="quieter">Quieter than the World Allows</button>
+      <button data-target="revisit-records">Re/Visit Records</button>
+      <button data-target="robs-flyer">Rob’s Flyer Assignment</button>
+      <button data-target="text-space">Text & Space</button>
+      <button data-target="the-place">The Place We To Fight Is Where We Learn To Love</button>
+      <button data-target="this-didnt-make-it">This Didn’t Make It To Grad</button>
+      <button data-target="untitled-artworks">Untitled Artworks from AD + SJ</button>
+
+      <div class="description">
+        <br>
+        Last Update: June 2025.
+      </div>
+    </div>
+  </div>
+
+  <!-- Artwork Area -->
+  <div id="artwork-display" class="artwork-display">
+    <img id="artwork-image" src="" alt="">
+    <div id="artwork-description" class="artwork-description"></div>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('#menu button');
+    const artworkImage = document.getElementById("artwork-image");
+    const artworkDescription = document.getElementById("artwork-description");
+
+    const artworkData = {
+ "a-z": {
+  image: "images/az.jpg",
+  description: `
+    <p>This project is a homage to <em>Statement and Counter-Statement: Notes on Experimental Jetset</em>, which concludes with an index/glossary-like anthology of texts previously written by them.</p>
+
+    <p>Consisting of short fragments from interviews, lecture notes, and personal correspondence, the last chapter functions as a cut-up collage of ever-changing (and ever-contradicting) ways of reasoning.</p>
+
+    <p>I wouldn't know where to begin if I had to compile a list of names, items, or topics that have inspired or influenced me.</p>
+
+    <p>Therefore, in this modest publication, I've chosen to create a list of references corresponding to each letter of the alphabet that have shaped my perspective of seeing the world.</p>
+
+    <p>This is an A–Z of things I like.</p>
+  `
+},
+
+      "bloom": {
+        image: "images/Bloom_Poster.jpg",
+        description: "<em>Together we can bloom a better tomorrow</em>, a poster for the planet."
+      },
+      "crossing-border": {
+        image: "images/CrossingBorder.jpg",
+        description: "Poster for Crossing Border Festival."
+      },
+      "damascus": {
+    image: "images/damascus.jpg",
+    description:`
+  <p>
+    The Damascus Modular Typeface is based on the Umayyad Mosque in Damascus, Syria. Known for its pillars that stretch across the courtyard of the mosque, I decided to dissect the form of the pillars and create a modular grid system that would allow me to design this typeface with the mosque’s characteristics.
+  </p>
+  <p>
+    The concept and style of the typeface were also considered to ensure that each letter can be connected with one another to replicate the arcade of the mosque. A type specimen and an artefact were also made to showcase the modular type.
+  </p>
+  <p>
+    This project was awarded a
+    <a href="https://www.red-dot.org/project/damascus-modular-typeface" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;"
+       onmouseover="this.style.textDecoration='none'" onmouseout="this.style.textDecoration='underline'">
+      Red Dot Design Award</a> in 2021.
+  </p>
+`
+  },
+      "edith": {
+        image: "images/edith.jpg",
+        description: `A custom typeface for the title card and poster of horror film, <a href="https://mubi.com/en/nl/films/edith-2023" target="_blank" rel="noopener noreferrer">Edith</a>.`
+      },
+      "fluidity": {
+        image: "images/fluidity.jpg",
+"description": `
+  <p>
+    Flyer for IAFD Exhibition w/ Jakob Blessing.
+  </p>
+  <p>
+    Embody/Empower: Fluidity in Form is part of an ongoing collaboration between the IAFD department and the Dutch Ministry of Education, Culture and Science (OCW), marking the fifth edition of this partnership. As part of the project, students developed the official design for the Jos Brink Prijs 2026—a national award celebrating contributions to LGBTQIA+ emancipation, as well as six honorary statements, which will be presented to all nominees at next year’s award ceremony as a sustainable alternative to flowers.
+  </p>
+`
+
+      },
+      "how-you-are": {
+        image: "images/howyouare.jpg",
+        "description": `
+  <p>
+    For Image & Context, Jisu and I each picked a set of images (in total 160 faces & full-body portraits) before splitting them, and then combining the halves with mismatched counterparts—either complementing or disrupting the original image.
+  </p>
+
+  <p>
+    This is how you are is not how I want you.
+  </p>
+`
+
+      },
+      "i-forgot": {
+        image: "images/iforgot.jpg",
+        description: `
+  <p>Exhibition Identity for Fine Arts w/ Jakob Blessing</p>
+  <p>
+    <em>I Forgot How I Got Here</em> is a self-organised exhibition by the third-year Fine Arts bachelor students of the Royal Academy of Art (KABK), showcasing their current work ahead of the graduation year. By deciding to wonder about what they forgot, they open a new layer of thinking about their practice.
+  </p>
+  <p>
+    Forgetting is a recurring pillar of the exhibition, but more importantly, a lens on their practice that critically examines how they got to what they made.
+  </p>
+`
+      },
+      "i-love-you": {
+        image: "images/ily.jpg",
+        description: `
+  <p>I Love You As A Friend is an outcome of different writings put together by my beloved friends. Each contribution was thoughtfully written for their own personal reasons. Thus, this project is just merely a matter of form that encapsulates the feeling and sentiments of these works.</p>
+`
+      },
+      "intermission-party": {
+        image: "images/IPP2.jpg",
+        description: `
+  <p>
+     Intermission's debut album,  <a href="https://intermissionn.bandcamp.com/album/intermission-party-programme" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;" 
+    onmouseover="this.style.textDecoration='none'" onmouseout="this.style.textDecoration='underline'">
+    <em>Intermission Party Programme<em></a> 
+    is meticulously crafted with blistering post-punk tunes that are catered to your partying needs. Drawing inspiration from iconic acts like Parquet Courts and Talking Heads, as well as regional influences from SEA, the band is bound to capture your attention with their blend of noisy, snarky and punk-friendly clatter.
+  </p>
+`
+      },
+      "jan-middendorp": {
+        image: "images/jan1.jpg",
+        description: `
+  <p>For Design Practice, I worked with Hugo, Allegra, Martina, and Pijus on an exhibition to celebrate the life of 
+  <a href="https://example-link-for-jan-middendorp.com" target="_blank" rel="noopener noreferrer">Jan Middendorp Exhibition</a>. 
+  The exhibition explores Jan’s role as a meticulous researcher, showcasing his dedication and passion for the craft through his archival work.</p>
+  
+  <p>The exhibition was hosted at <a href="https://www.instagram.com/p/DDuIK_wMlsa/?utm_source=ig_web_copy_link&igsh=ZDY5NnlybjYwdnM1" target="_blank" rel="noopener noreferrer"><em>Page Not Found</em></a>.</p>
+`
+      },
+      "kabk-rewire": {
+        image: "images/kabkrewire.jpg",
+        description: "Riso printed flyer for KABK x Rewire."
+      },
+      "meditations": {
+        image: "images/meditations.jpg",
+        description: `
+  <p>Through an interplay of imagery, text, and abstract visuals, the installation invites viewers to reflect on the act of indulgence—its allure, excess, and pleasure.</p>
+  <ol>
+    <li>A carousel projector cycles through film slide stills, evoking nostalgia and intimate recollections of indulgence and loneliness.</li>
+    <li>A second carousel projector runs through a collection of text that prompts the viewer to question the idea of self-reflection, blurring the boundaries between desire and consequence.</li>
+    <li>An overhead projector transforms the act of indulgence into a mesmerizing performance. The transparency of the medium invites the audience into an almost dreamlike state, where indulgence becomes an act of surrender, an experience that is both mesmerising but brief.</li>
+  </ol>
+`
+      },
+      "patterns": {
+        image: "images/patterns.gif",
+        description:  `
+  <p>
+    <a href="https://www.instagram.com/p/C74J8UGoans/?hl=en&amp;img_index=1"target="_blank" rel="noopener noreferrer">Patterns, patterns, patterns</a> with Pablo, Keren, and Jakob.
+  </p>
+`
+      },
+      "quieter": {
+        image: "images/quieter.jpg",
+        description: `
+  <p>
+    This project explores the act of navigation—not just in a physical sense, but in an existential and psychological one. Through self-reflection, observations, and an interrogation of individualism, the narrative follows a journey of perceiving and positioning oneself within the world.
+  </p>
+`
+      },
+      "revisit-records": {
+        image: "images/revisit.gif",
+        description: `
+  <p>
+    Bootlegging—once seen as theft—is now embraced as a powerful form of creative expression. This project explores how bootlegging can shift from being perceived as infringement to being understood as tribute. It aligns with my broader interest in how designers can reframe and recontextualise existing work.
+  </p>
+  <p>
+    In many ways, bootlegging functions as critique, honour, or homage—a reinterpretation that challenges conventional ideas of authorship and originality, while simultaneously engaging in a cultural dialogue.
+  </p>
+`
+      },
+      "robs-flyer": {
+        image: "images/rob3.jpg",
+        description: "A collection of all outcomes from Rob’s Flyer Assignment."
+      },
+      "text-space": {
+        image: "images/textandspace3.jpg",
+        description: `
+  <p><em>
+    I think it's dark and it looks like rain, you said<br>
+    And the wind is blowing<br>
+    Like it's the end of the world, you said<br>
+    And it's so cold, it's like the cold if you were dead<br>
+    Then you smiled for a second
+  </em></p>
+
+  <p>Plainsong, The Cure.</p>
+`
+      },
+      "the-place": {
+        image: "images/theplace.jpg",
+"description": `
+  <p>Poster/Fold Out for Graduation Project  </p>
+    This was Alexander Namrok’s graduation project, exploring the complex relationship between father and son through the lens of a self-defense gym his father opened. Despite limited verbal communication, they connected physically and emotionally in this space.
+  </p>
+  <p>
+    Using photography, Alexander staged their interactions in the dojo to capture moments of embodied love and understanding. As the project evolved, it fostered renewed empathy and connection between them, emphasizing how precious their time together is.
+  </p>
+  <p>
+    The work invites viewers to reflect on their own familiar relationships and communication.
+  </p>
+`
+
+      },
+      "this-didnt-make-it": {
+        image: "images/thisdidnt.jpg",
+      "description": `
+  <p> Flyer for Komma Collective
+    w/ Jakob Blessing.<p> 
+      <p>Come see the killed darlings and things that simply didn’t make it to grad... An exhibition for the 4th year photography students.
+  </p>
+`
+
+      },
+      "untitled-artworks": {
+        image: "images/untitledartworks.jpg",
+        description: `
+  <p>
+    Untitled Artworks features paintings and drawings by AD &amp; MSJ. A romantic collection of figurative grotesque artworks which expresses personal impressions of life references.
+  </p>
+`
+      },
+
+    "navigation": {
+  image: "images/lunchlecture.jpg",
+  description: `
+    <p>
+      This project explores the act of navigation—not just in a physical sense, but in an existential and psychological one. Through self-reflection, observations, and an interrogation of individualism, the narrative follows a journey of perceiving and positioning oneself within the world.
+    </p>
+  `
+}
+    
+    };
+
+    buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    buttons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    const targetId = button.getAttribute("data-target");
+    const artwork = artworkData[targetId];
+
+    if (artwork) {
+      artworkImage.src = artwork.image;
+      artworkDescription.innerHTML = artwork.description;  // important change here
+    }
+  });
+});
+  </script>
+</body>
+</html>
